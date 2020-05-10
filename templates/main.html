@@ -73,18 +73,6 @@
                 center: [55.964157, 37.413781],
                 zoom: 16
             });
-            var location1 = 37.407837;
-            var location2 = 55.964813;
-            var geoObjects = new ymaps.Placemark([location2, location1], {
-                hintContent: 'Сотрудник 1 \nИнженер \nЗанят'
-            });
-            myMap.geoObjects.add(geoObjects);
-            var location3 = 37.412605;
-            var location4 = 55.965575;
-            var geoObject = new ymaps.Placemark([location4, location3], {
-                hintContent: 'Сотрудник 2 \nИнженер \nСвободен'
-            });
-            myMap.geoObjects.add(geoObject);
 
             var location5 = 37.409000;
             var location6 = 55.965000;
@@ -92,6 +80,21 @@
                 preset: 'islands#redDotIcon'
             });
             myMap.geoObjects.add(situation);
+            var location1 = 37.407837;
+            var location2 = 55.964813;
+            var a = String(Math.acos(Math.sin(location1)*Math.sin(location5)+(Math.cos(location1)*Math.cos(location5)*Math.cos(location6-location2)))*6370)
+            var geoObjects = new ymaps.Placemark([location2, location1], {
+                hintContent: 'Сотрудник 1, Инженер, Занят, Расстояние: ' + a
+            });
+            myMap.geoObjects.add(geoObjects);
+            var location3 = 37.412605;
+            var location4 = 55.965575;
+            var a = String(Math.acos(Math.sin(location3)*Math.sin(location5)+(Math.cos(location3)*Math.cos(location5)*Math.cos(location6-location4)))*6370)
+            var geoObject = new ymaps.Placemark([location4, location3], {
+                hintContent: 'Сотрудник 1, Инженер, Свободен, Расстояние: ' + a
+            })
+            myMap.geoObjects.add(geoObject);
+
         }
     </script>
 <div id="map" class = 's' ></div>
