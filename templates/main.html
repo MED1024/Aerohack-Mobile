@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVOI(ncident)</title>
+</head>
+
+<style>
+   .example {
+    background: #fffff5; /* Цвет фона */
+    font-family: "Courier New", Courier, monospace; /* Семейство шрифта */
+    margin: 0 0 1em; /* Отступы */
+    white-space: pre-wrap; /* Учитываются все пробелы и переносы */
+   }
+    body {
+        background: url(https://html5book.ru/wp-content/uploads/2015/05/background27.png);
+        padding: 10px 0px 0px 0px;
+    }
+    h1 {
+        background: grey;
+        padding: 10px;
+        margin: -18px;
+        color: #1b1e21; /* Цвет заголовка */
+        font-size: 24pt; /* Размер шрифта в пунктах */
+        font-family: Georgia, Times, serif; /* Семейство шрифтов */
+        font-weight: normal;
+    } /* Нормальное начертание текста  */
+    h3 {
+        color: #1b1e21; /* Цвет заголовка */
+        font-size: 24pt; /* Размер шрифта в пунктах */
+        font-family: Georgia, Times, serif; /* Семейство шрифтов */
+        font-weight: normal;
+    } /* Нормальное начертание текста  */
+
+    p {
+        font-size: 10pt; /* Размер шрифта в пунктах */
+        font-family: Georgia, Times, serif; /* Семейство шрифтов */
+        font-weight: normal;
+        display:inline-block;
+	    border:2px solid black;
+        white-space: pre-wrap;
+	    padding:6px 6px 6px 6px;
+	    float: left;
+}
+
+    .s {
+        position: absolute; /* Абсолютное позиционирование */ /* Положение от нижнего края */
+        left: 200px; /* Положение от правого края */
+        width: 600px;
+        height: 400px;
+    }
+    .s2 {
+        position: absolute; /* Абсолютное позиционирование */ /* Положение от нижнего края */
+        left: 580px;
+        width: 600px;
+        height: 400px;
+    }
+    .hide {
+        visibility: hidden;
+    }
+
+</style>
+<body>
+<h1 align = 'center'>КАРТА ПРОИСШЕСТВИЙ</h1>
+<h3>Список сотрудников</h3>
+<div><p>{{ messages }}</p></div>
+<div id="rr" class = 'hide' >{{location1}}</div><div id="rrr" class = 'hide'>{{location2}}</div>
+ <script src="https://api-maps.yandex.ru/2.1/?apikey=a1f4e791-4b06-4712-9e6d-6790f42d0042&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [55.964157, 37.413781],
+                zoom: 16
+            });
+            var location1 = 37.407837;
+            var location2 = 55.964813;
+            var geoObjects = new ymaps.Placemark([location2, location1], {
+                hintContent: 'Сотрудник 1 \nИнженер \nЗанят'
+            });
+            myMap.geoObjects.add(geoObjects);
+            var location3 = 37.412605;
+            var location4 = 55.965575;
+            var geoObject = new ymaps.Placemark([location4, location3], {
+                hintContent: 'Сотрудник 2 \nИнженер \nСвободен'
+            });
+            myMap.geoObjects.add(geoObject);
+
+            var location5 = 37.409000;
+            var location6 = 55.965000;
+            var situation = new ymaps.Placemark([location6, location5], {hintContent: 'Сломан перевозчик. Направить инженера.'}, {
+                preset: 'islands#redDotIcon'
+            });
+            myMap.geoObjects.add(situation);
+        }
+    </script>
+<div id="map" class = 's' ></div>
+<div id="YMapsID" class = 's2' ></div>
+</body>
+</html>
