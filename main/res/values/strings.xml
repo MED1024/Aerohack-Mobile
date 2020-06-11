@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">probaMap</string>
+    <string name="feedbacktype">Сотрудник МЧС</string>
+    <string name="feedbacktype1">Медик</string>
+    <string name="feedbacktype2">Охранник</string>
+    <string name="feedbacktype3">Электрик</string>
+    <string name="feedbacktype4">Инженер</string>
+    <string name="feedbacktype5">Уборщик</string>
+    <string name="feedbacktype6">Менеджер</string>
+    <string name="about_title">Информация сотрудника</string>
+    <string name="about_title1">Информация сотрудника</string>
+    <string name="timer">Информация сотрудника</string>
+    <string name="provider_gps">GPS</string>
+    <string name="provider_network">Network</string>
+    <string name="location_settings">Location settings</string>
+    <string name="title_activity_maps">Location map</string>title_activity_maps
+
+
+
+</resources>

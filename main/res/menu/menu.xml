@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/action_add_task"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="Add new Task"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/coor"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        android:title="Get Coord"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/info_personal"
+        android:icon="@android:drawable/ic_menu_manage"
+        android:title="Info Personal"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/info_map"
+        android:icon="@android:drawable/ic_menu_compass"
+        android:title="Info Map"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/upload"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="Upload data"
+        app:showAsAction="always" />
+
+</menu>
